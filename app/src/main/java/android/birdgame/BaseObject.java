@@ -1,9 +1,10 @@
 package android.birdgame;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Rect;
 
-public class BaseObject {
+public abstract class BaseObject {
 // Declaracion de las variables
     protected float x,y;
     protected int width, height;
@@ -20,7 +21,15 @@ public class BaseObject {
         this.height = height;
         this.bm = bm;
     }
-// Getters y setters
+
+    public BaseObject(float x, float y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
+    // Getters y setters
     public float getX() {
         return x;
     }
@@ -52,6 +61,8 @@ public class BaseObject {
     public void setHeight(int height) {
         this.height = height;
     }
+
+    public abstract void draw(Canvas canvas);
 
     public Bitmap getBm() {
         return bm;
