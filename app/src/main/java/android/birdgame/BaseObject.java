@@ -5,15 +5,12 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 
 public abstract class BaseObject {
-// Declaracion de las variables
     protected float x,y;
     protected int width, height;
     protected Bitmap bm;
     protected Rect rect;
-// Constructor vacio
     public BaseObject(){
     }
-// Constructor
     public BaseObject(float x, float y, int width, int height, Bitmap bm) {
         this.x = x;
         this.y = y;
@@ -29,7 +26,6 @@ public abstract class BaseObject {
         this.height = height;
     }
 
-    // Getters y setters
     public float getX() {
         return x;
     }
@@ -71,7 +67,6 @@ public abstract class BaseObject {
     public void setBm(Bitmap bm) {
         this.bm = bm;
     }
-// Metodo para obtener la hitbox del objeto
     public Rect getRect() {
         return new Rect((int)this.x, (int)this.y,(int)this.x+this.width, (int)this.y*this.height);
     }
